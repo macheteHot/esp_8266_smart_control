@@ -14,6 +14,7 @@
 - MQTT 协议远程通信
 - Web Server 提供网页控制界面
 - WiFi 配网与联网
+- 433 信号发送到 mqtt 可通过 home assistant 自动化处理
 
 ## 快速开始
 
@@ -43,6 +44,8 @@
    - 设备联网后，访问设备 IP 即可打开网页控制界面 控制页面可以选择开启的功能
      ![系统](imgs/系统.jpg)
    - 可在 mqtt 或初始化配网页面配置服务器地址密码等
+   - 可在 HomeAssistant 自动化处接收 433 事件
+     ![automation](imgs/automation.jpg)
    - 可在 OTA 页面上传固件升级
    - 可在日志页面看到系统日志和 433 无线设备码
      ![日志](imgs/日志.jpg)

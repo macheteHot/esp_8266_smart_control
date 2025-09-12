@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>虎哥科技</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>智能家居控制器</h2>
+    <div id="serial_number">
+      序列号:
+      <span class="mac" style="padding: 0 16px"></span> 版本:
+      <span class="version" style="padding: 0 16px"></span>
+    </div>
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active" data-tab="systemTab">系统</div>
+      <div class="tab" data-tab="mqttTab">MQTT</div>
+      <div class="tab" data-tab="otaTab">OTA</div>
+      <div class="tab" data-tab="logTab">日志</div>
+    </div>
+    <!-- Tab 内容 -->
+    <div class="tab-content active" id="systemTab">
+      <div class="form">
+        <div class="form-item">
+          <p>空调:</p>
+          <label class="switch">
+            <input type="checkbox" id="ac" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="form-item">
+          <p>人体存在:</p>
+          <label class="switch">
+            <input type="checkbox" id="presence" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="form-item">
+          <p>门磁:</p>
+          <label class="switch">
+            <input type="checkbox" id="door" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="form-item">
+          <p>灯:</p>
+          <label class="switch">
+            <input type="checkbox" id="light" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="form-item">
+          <p>433事件:</p>
+          <label class="switch">
+            <input type="checkbox" id="rcEvent" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <span class="tip">
+          433 topic 地址为
+          <code>rc_433/<span class="mac">+</span>/events</code></span>
+        <button class="form-submit" id="sysBtn">更新系统配置</button>
+        <button class="form-submit" id="rebootBtn">重启系统</button>
+        <div class="response" id="systemResponse"></div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="mqttTab">
+      <div class="form">
+        <div class="form-item">
+          <label>服务器:</label>
+          <input type="text" id="mqtt_server" />
+        </div>
+        <div class="form-item">
+          <label>端口:</label>
+          <input type="number" id="mqtt_port" min="1" max="65535" />
+        </div>
+        <div class="form-item">
+          <label>用户名:</label>
+          <input type="text" id="mqtt_username" />
+        </div>
+        <div class="form-item">
+          <label>密码:</label>
+          <input type="text" id="mqtt_password" />
+        </div>
+        <button class="form-submit" id="mqttBtn">更新MQTT 配置</button>
+        <div class="response" id="mqttResponse"></div>
+      </div>
+    </div>
+    <div class="tab-content" id="otaTab">
+      <div class="form">
+        <div class="warring">注意更新过程中不要断电!</div>
+        <div class="form-item">
+          <input type="file" id="firmware" accept=".bin" />
+        </div>
+        <button class="form-submit" id="otaBtn">更新固件</button>
+        <div class="response" id="otaResponse"></div>
+      </div>
+    </div>
+    <div class="tab-content" id="logTab">
+      <div id="logArea"></div>
+    </div>
+  </div>
+</body>
+
+</html>

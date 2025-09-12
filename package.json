@@ -1,0 +1,23 @@
+{
+  "name": "esp8266-start-control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx rollup -c --silent"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "clean-css": "^5.3.3",
+    "gzipper": "^8.2.1",
+    "html-minifier-terser": "^7.2.0",
+    "rollup": "^4.49.0",
+    "rollup-plugin-postcss": "^4.0.2"
+  }
+}

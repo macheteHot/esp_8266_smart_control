@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  padding: 0;
+  color: #333;
+}
+@supports (height: 100dvh) {
+  body {
+    height: 100dvh;
+  }
+}
+
+.container {
+  height: 100%;
+  width: 90vw;
+  max-width: 600px;
+  background: #fff;
+  padding: 0 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+h2 {
+  text-align: center;
+  color: #1976d2;
+}
+
+#serial_number {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+}
+/* Tab 样式 */
+.tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background: #f4f6f8;
+  border-radius: 6px 6px 0 0;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: #ccc;
+  border-bottom: 2px solid #fff;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.tab-content {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.tab-content.active {
+  display: flex;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+}
+
+.form-item label,
+.form-item p {
+  width: 70px;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 12px;
+}
+
+.form-item p {
+  width: 90px;
+}
+
+.form-item input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.tip {
+  margin-left: 12px;
+  font-size: 12px;
+  color: #888;
+}
+
+.tip code {
+  background: #1e1e1e;
+  color: #0f0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.form-submit {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-submit:hover {
+  background-color: #115293;
+}
+
+.warring {
+  color: red;
+  text-align: center;
+}
+
+#logArea {
+  background: #1e1e1e;
+  color: #0f0;
+  height: 100%;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+  overflow-y: auto;
+  border-radius: 6px;
+}
